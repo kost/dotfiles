@@ -156,10 +156,6 @@ reloadcomp() {
 
 [[ -s "$HOME/.aliases" ]] && source "$ZSH/.aliases"
 
-alias SSH='ssh -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null"'
-alias SCP='scp -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null"'
-alias tmuxn='tmux new -s'
-
 export GOPATH=$HOME/go
 
 watch=(root)
