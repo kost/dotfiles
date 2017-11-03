@@ -56,5 +56,7 @@ export SCM_CHECK=true
 # Load Bash It
 # source "$BASH_IT"/bash_it.sh
 
+[[ -s "$HOME/.aliases" ]] && source "$HOME/.aliases"
+
 [[ -s "$BASH_IT/bash_it.sh" ]] && source "$BASH_IT/bash_it.sh"
 
