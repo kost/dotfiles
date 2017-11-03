@@ -1,7 +1,6 @@
 [ ! -z "$PS1" ] && echo "Booting up....(.zshrc)"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="$PATH:$HOME/.rvm/bin"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -165,6 +164,8 @@ export VISUAL=vim
 export EDITOR=vim
 
 export GOPATH=$HOME/go
+
+export PATH="$PATH:$HOME/.rvm/bin"
 
 # Customize to your needs...
 export PATH=~/bin:~/hack/bin:$PATH
