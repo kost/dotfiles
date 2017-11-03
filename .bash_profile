@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
 # Path to the bash it configuration
 export BASH_IT="$HOME/.bash_it"
 
@@ -50,4 +54,7 @@ export SCM_CHECK=true
 # export BASH_IT_AUTOMATIC_RELOAD_AFTER_CONFIG_CHANGE=1
 
 # Load Bash It
-source "$BASH_IT"/bash_it.sh
+# source "$BASH_IT"/bash_it.sh
+
+[[ -s "$BASH_IT/bash_it.sh" ]] && source "$BASH_IT/bash_it.sh"
+
