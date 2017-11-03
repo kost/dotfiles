@@ -1,4 +1,7 @@
 alias SSH='ssh -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null"'
 alias SCP='scp -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null"'
+
 alias tmuxn='tmux new -s'
+
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
