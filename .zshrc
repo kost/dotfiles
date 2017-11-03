@@ -1,3 +1,4 @@
+[ ! -z "$PS1" ] && echo "Booting up....(.zshrc)"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$PATH:$HOME/.rvm/bin"
@@ -59,10 +60,10 @@ ZSH_THEME="sunaku"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+# plugins=(git)
+plugins=(git perl ruby history-substring-search)
 
 # source $ZSH/oh-my-zsh.sh
-[[ -s "$ZSH/oh-my-zsh.sh" ]] && source "$ZSH/oh-my-zsh.sh"
 
 # User configuration
 
@@ -92,3 +93,82 @@ plugins=(git)
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# COMPLETION SETTINGS
+# add custom completion scripts
+fpath=(~/.zsh/completion $fpath)
+autoload -U ~/.zsh/completion/*(:t)
+
+[[ -s "$ZSH/oh-my-zsh.sh" ]] && source "$ZSH/oh-my-zsh.sh"
+
+
+HISTSIZE=25000
+
+# don't incrementally append
+unsetopt INC_APPEND_HISTORY
+# don't share history
+unsetopt sharehistory
+# maybe this will work
+unsetopt SHARE_HISTORY
+# don't ignore all dups in history
+unsetopt histignorealldups
+# append history
+setopt APPEND_HISTORY
+# delete dups
+setopt HIST_EXPIRE_DUPS_FIRST
+# don't beep
+setopt NO_BEEP
+# complete in word
+setopt COMPLETE_IN_WORD
+
+# page up/down to searchthrough history
+bindkey "^[[5~" history-beginning-search-backward
+bindkey "^[[6~" history-beginning-search-forward
+
+# Completing process IDs with menu selection:
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:kill:*'   force-list always
+
+# To plain old fall back on filename completion
+# zstyle ':completion:*' completer _expand _complete _files _correct _approximate
+
+# This allows you to complete files anywhere, on any command, at
+# any time, by pressing <C-X>f (i.e. Control X, followed by f).
+zle -C complete-file menu-expand-or-complete _generic
+zstyle ':completion:complete-file:*' completer _files
+bindkey -M viins '^Xf'      complete-file
+
+# zstyle ':completion:*' use-cache on
+# zstyle ':completion:*' cache-path ~/.zsh/cache
+
+# reload
+reloadcomp() {
+
+  local f
+
+  f=(~/.zsh/completion/*(.))
+
+  unfunction $f:t 2> /dev/null
+
+  autoload -U $f:t
+
+}
+
+[[ -s "$HOME/.aliases" ]] && source "$ZSH/.aliases"
+
+alias SSH='ssh -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null"'
+alias SCP='scp -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null"'
+alias tmuxn='tmux new -s'
+
+export GOPATH=$HOME/go
+
+watch=(root)
+WATCHFMT='[%B%n%b] %B%a%b from %B%(M:%M:dunno)%b on %U%l%u at [%B%T%b]'
+LOGCHECK=1
+
+export VISUAL=vim
+export EDITOR=vim
+
+# Customize to your needs...
+export PATH=~/bin:~/hack/bin:$PATH
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
