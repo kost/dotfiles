@@ -154,7 +154,7 @@ reloadcomp() {
 
 }
 
-[[ -s "$HOME/.aliases" ]] && source "$ZSH/.aliases"
+[[ -s "$HOME/.aliases" ]] && source "$HOME/.aliases"
 
 export GOPATH=$HOME/go
 
