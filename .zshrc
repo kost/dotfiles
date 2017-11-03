@@ -156,7 +156,6 @@ reloadcomp() {
 
 [[ -s "$HOME/.aliases" ]] && source "$HOME/.aliases"
 
-export GOPATH=$HOME/go
 
 watch=(root)
 WATCHFMT='[%B%n%b] %B%a%b from %B%(M:%M:dunno)%b on %U%l%u at [%B%T%b]'
@@ -165,6 +164,15 @@ LOGCHECK=1
 export VISUAL=vim
 export EDITOR=vim
 
+export GOPATH=$HOME/go
+
 # Customize to your needs...
 export PATH=~/bin:~/hack/bin:$PATH
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+if [ -d "$HOME/.pyenv" ]; then
+        export PYENV_ROOT="$HOME/.pyenv"
+        export PATH="$PYENV_ROOT/bin:$PATH"
+        eval "$(pyenv init -)"
+fi
+
