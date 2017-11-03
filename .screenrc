@@ -1,0 +1,33 @@
+# don't display welcome message
+startup_message off
+
+# use regular audible bell and don't tell me when bells happen in other windows
+vbell off
+bell_msg ""
+
+# keep 5000 lines of scrollback
+# defscrollback 5000
+defscrollback 999999
+
+# don't block command output if terminal stops responding
+nonblock on
+
+# status line tuning
+hardstatus on
+hardstatus alwayslastline "%{= kG}[%H]  %{= ky}%-Lw%{= kY}[%n%f* %t]%{= ky}%+Lw%=%{= kg}%c %d.%m.%Y"
+
+# so it won't seem like there is a delay when entering copy mode
+msgminwait 0
+
+# detach on disconnect
+autodetach on
+
+# make search case-insensitive
+ignorecase on
+
+# CTRL+K to scroll up one line and META+K to scroll up one page
+bindkey "^[k" eval "copy" "stuff ^b"  # enter copy mode and move up one page
+bindkey "^k" eval "copy" "stuff k"    # enter copy mode and move up one line
+bindkey -m "^[k" stuff ^b             # move up one page
+bindkey -m "^k" stuff k               # move up one line
+
