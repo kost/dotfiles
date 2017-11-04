@@ -12,6 +12,15 @@ if [ -d "$HOME/.pyenv" ]; then
 	eval "$(pyenv init -)"
 fi
 
+if [ "$LANG" = "" ]; then
+	export LANG=en_US
+fi
+
+if [ "$LC_ALL" = "" ]; then
+        export LC_ALL=en_US
+fi
+
+
 # Path to the bash it configuration
 export BASH_IT="$HOME/.bash_it"
 
