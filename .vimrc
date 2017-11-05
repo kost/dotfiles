@@ -60,3 +60,7 @@ set pastetoggle=<F11>
 set mouse=
 set ttymouse=
 
+" show whitespaces at the end of lines
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+\%#\@<!$/
+
