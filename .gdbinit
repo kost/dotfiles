@@ -4,6 +4,8 @@ set disassembly-flavor att
 set confirm off
 set verbose off
 
+set startup-with-shell off
+
 set history filename ~/.gdb_history
 set history expansion on
 set history save on
