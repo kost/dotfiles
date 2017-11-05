@@ -45,4 +45,15 @@ set tabstop=8 " real tabs should be 8, and they will show with show list
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
 
+" if has("gui_running")
+"    "echo "yes, we have a GUI"
+"    set mouse=a
+"else
+"    "echo "Boring old console"
+"    set mouse=
+"endif
+
+" ignore mouse
+set mouse=
+set ttymouse=
 
