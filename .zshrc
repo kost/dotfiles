@@ -168,14 +168,6 @@ export EDITOR=vim
 
 export GOPATH=$HOME/go
 
-if [ "$LANG" = "" ]; then
-	export LANG=en_US
-fi
-
-if [ "$LC_ALL" = "" ]; then
-	export LC_ALL=en_US
-fi
-
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # Customize to your needs...
