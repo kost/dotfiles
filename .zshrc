@@ -155,6 +155,9 @@ reloadcomp() {
 
 [[ -s "$HOME/.aliases" ]] && source "$HOME/.aliases"
 
+[[ -s "$HOME/.customize.env" ]] && source "$HOME/.customize.env"
+
+[[ -s "$HOME/.customize" ]] && source "$HOME/.customize"
 
 watch=(root)
 WATCHFMT='[%B%n%b] %B%a%b from %B%(M:%M:dunno)%b on %U%l%u at [%B%T%b]'

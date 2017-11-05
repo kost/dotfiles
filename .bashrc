@@ -77,5 +77,9 @@ export SCM_CHECK=true
 
 [[ -s "$HOME/.aliases" ]] && source "$HOME/.aliases"
 
+[[ -s "$HOME/.customize.env" ]] && source "$HOME/.customize.env"
+
+[[ -s "$HOME/.customize" ]] && source "$HOME/.customize"
+
 [[ -s "$BASH_IT/bash_it.sh" ]] && source "$BASH_IT/bash_it.sh"
 
