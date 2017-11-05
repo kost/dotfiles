@@ -20,3 +20,4 @@ set input-radix 0x10
 set height 0
 set width 0
 
+source ~/.gdbinit-gef.py
