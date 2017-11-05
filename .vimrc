@@ -9,7 +9,10 @@ set ruler
 " jump as we type in seach
 set incsearch
 " turn on syntax highlighting
-syntax on
+if has('syntax')
+    syntax enable
+    set background=dark
+endif
 
 au BufEnter *.nasl setfiletype nasl
 au BufEnter *.nse setfiletype lua
