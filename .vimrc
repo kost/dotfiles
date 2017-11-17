@@ -58,7 +58,7 @@ set pastetoggle=<F11>
 
 " ignore mouse
 set mouse=
-set ttymouse=
+"set ttymouse=
 
 " show whitespaces at the end of lines
 highlight ExtraWhitespace ctermbg=red guibg=red
