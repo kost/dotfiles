@@ -30,7 +30,7 @@ au BufEnter *.nse setfiletype lua
 
 " don't make any noise
 set noerrorbells
-" set visualbell " Use visual bell instead of beeping
+set visualbell " Use visual bell instead of beeping
 "set cursorcolumn " highlight the current column
 "set cursorline " highlight current line
 set wildmenu " Better command-line completion
