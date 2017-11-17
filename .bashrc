@@ -68,6 +68,10 @@ export SCM_CHECK=true
 # Load Bash It
 # source "$BASH_IT"/bash_it.sh
 
+export VISUAL=vim
+
+export EDITOR=vim
+
 [[ -s "$HOME/.aliases" ]] && source "$HOME/.aliases"
 
 [[ -s "$HOME/.customize.env" ]] && source "$HOME/.customize.env"
