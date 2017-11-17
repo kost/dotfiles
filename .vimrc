@@ -2,6 +2,10 @@
 
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
+"set clipboard=exclude:.* " fix slow startup - remote clipboard
+"set re=1 " fix slow startup - use old regex engine
+
+
 " explicitly turn off vi compatibility mode
 set nocompatible
 " put ruler on each page
