@@ -1,0 +1,6 @@
+use feature 'say'; # to don't write \n all the time
+
+use Data::Dumper;
+
+sub pp2 { print Data::Dumper->Dump([@_]) }
+
