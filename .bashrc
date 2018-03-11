@@ -13,7 +13,9 @@ if [ -d "$HOME/.pyenv" ]; then
 fi
 
 # disable beeps
-setterm -blength 0
+if [ -n "$TERM" ]; then
+	setterm -blength 0
+fi
 
 # Path to the bash it configuration
 export BASH_IT="$HOME/.bash_it"
