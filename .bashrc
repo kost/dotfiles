@@ -14,7 +14,9 @@ fi
 
 # disable beeps
 if [ -n "$TERM" ]; then
-	setterm -blength 0
+	if [ -x "$(command -v setterm)" ]; then
+		setterm -blength 0
+	fi
 fi
 
 # Path to the bash it configuration
