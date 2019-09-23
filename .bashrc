@@ -13,7 +13,7 @@ if [ -d "$HOME/.pyenv" ]; then
 fi
 
 # disable beeps
-if [ -n "$TERM" ]; then
+if [ ! "$TERM"=="" ]; then
 	if [ -x "$(command -v setterm)" ]; then
 		setterm -blength 0
 	fi
