@@ -159,7 +159,7 @@ reloadcomp() {
 
 [[ -s "$HOME/.customize" ]] && source "$HOME/.customize"
 
-watch=(root)
+watch=(root $LOGNAME)
 WATCHFMT='[%B%n%b] %B%a%b from %B%(M:%M:dunno)%b on %U%l%u at [%B%T%b]'
 LOGCHECK=1
 
@@ -168,15 +168,20 @@ export EDITOR=vim
 
 export GOPATH=$HOME/go
 
-export PATH="$PATH:$HOME/.rvm/bin"
+# export PATH="$PATH:$HOME/.rvm/bin"
 
 # Customize to your needs...
-export PATH=~/bin:~/hack/bin:$PATH
+export PATH=~/bin:~/hack/bin:$GOPATH/bin:$PATH:/usr/local/sbin
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 if [ -d "$HOME/.pyenv" ]; then
         export PYENV_ROOT="$HOME/.pyenv"
         export PATH="$PYENV_ROOT/bin:$PATH"
         eval "$(pyenv init -)"
+fi
+
+if [ -d "$HOME/.nodenv" ]; then
+	eval "$(nodenv init - zsh)"
 fi
 
