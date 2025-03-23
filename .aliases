@@ -1,9 +1,10 @@
-alias SSH='ssh -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null"'
-alias SCP='scp -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null"'
+alias SSH='ssh -o "StrictHostKeyChecking=no" -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedKeyTypes=+ssh-rsa -o KexAlgorithms=+diffie-hellman-group1-sha1 -o "UserKnownHostsFile=/dev/null"'
+alias SCP='scp -o "StrictHostKeyChecking=no" -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedKeyTypes=+ssh-rsa -o KexAlgorithms=+diffie-hellman-group1-sha1 -o "UserKnownHostsFile=/dev/null"'
 
 alias tmuxn='tmux new -s'
 
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias SSHK='ssh-add $HOME/.ssh/*rsa $HOME/.ssh/*dsa'
 
 alias brewski='brew update && brew upgrade && brew cleanup; brew doctor'
 
