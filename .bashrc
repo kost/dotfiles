@@ -84,3 +84,4 @@ export EDITOR=vim
 
 [[ -s "$BASH_IT/bash_it.sh" ]] && source "$BASH_IT/bash_it.sh"
 
+. "$HOME/.cargo/env"
