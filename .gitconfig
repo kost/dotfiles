@@ -4,8 +4,12 @@
 
 [color]
         ui = true
+
 [github]
         user = kost
+
+[init]
+	defaultBranch = main
 
 [alias]
 	add-commit = !git add -A && git commit
