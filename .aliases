@@ -8,4 +8,4 @@ alias SSHK='ssh-add $HOME/.ssh/*rsa $HOME/.ssh/*dsa'
 
 alias brewski='brew update && brew upgrade && brew cleanup; brew doctor'
 
-
+alias clyolo='claude --dangerously-skip-permissions'
